@@ -17,7 +17,18 @@ function setup() {
 
 function draw() {
   background(0);
-  
+
   image(dvdLogo, x, y, dvdLogo.width/2, dvdLogo.height/2)
+
+  x+=speedX;
+  y+=speedY;
+
+  if(y+dvdLogo.height/2 > windowHeight || y < 0 ) {
+    speedY = -speedY;
+  }
+
+  if(x+dvdLogo.width/2 > windowWidth || x < 0) {
+    speedX = -speedX;
+  }
 
 }
